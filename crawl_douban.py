@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import HTMLParser
 import os
 import os.path
 import re
@@ -99,6 +100,19 @@ def CrawlUserData(user, base_output_dir):
     crawler = DoubanCrawler(*spec)
     counter = crawler.GetPages(user, base_output_dir)
     print spec[1], counter
+
+
+class UserDataParser(HTMLParser.HTMLParser):
+
+  def __init__(self):
+    pass
+
+  def _Reset(self):
+    pass
+    
+
+def _GetContentLinkFromUserData(source_html):
+  pass
 
 
 def main(argv):
